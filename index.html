@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <div class="head">
+      <h2>Register for the Event</h2>
+    </div>
+    <br />
+    <form id="registrationForm">
+      <div>
+        <label for="name">Name: </label>
+        <input
+          type="text"
+          placeholder="Enter you Name"
+          required
+          id="name"
+          pattern="[A-Za-z ]+"
+        />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          placeholder="Enter your Email"
+          required
+          id="email"
+        />
+      </div>
+      <div>
+        <label for="phone">Phone:</label>
+        <input
+          type="tel"
+          placeholder="Enter Your Number"
+          required
+          pattern="[0-9]{10}"
+          id="phone"
+        />
+      </div>
+      <div>
+        <label for="college">College/University:</label>
+        <input
+          type="text"
+          placeholder="Enter Your College/University"
+          required
+          id="college"
+        />
+      </div>
+      <div class="academic_year">
+        <label for="year">Academic Year: </label>
+        <select name="Academic_year" id="Year" required>
+          <option value="" disabled selected>Select</option>
+          <option value="1st">First Year</option>
+          <option value="2nd">Second Year</option>
+          <option value="3rd">Third Year</option>
+          <option value="4th">Fourth Year</option>
+        </select>
+      </div>
+      <div class="linkedin">
+        <label for="linkedin_pf">Linkedin Profile: </label>
+        <input
+          type="url"
+          placeholder="Enter Your Linkedin Profile URL"
+          required
+          id="linkedin_pf"
+        />
+      </div>
+      <div class="github">
+        <label for="github_pf">Github Profile: </label>
+        <input
+          type="url"
+          placeholder="Enter Your Github Profile URL"
+          required
+          id="github_pf"
+        />
+      </div>
+      <div class="portfolio">
+        <label for="portfolio">Portfolio: </label>
+        <input
+          type="url"
+          placeholder="Enter Your Portfolio URL"
+          required
+          id="portfolio"
+        />
+      </div>
+      <div class="resume">
+        <label for="resume">Resume: </label>
+        <input type="file" accept=".pdf,.doc,.docx" required id="resume" />
+      </div>
+      <div class="reason">
+        <label for="reason">Reason for Participation: </label>
+        <div class="reason-content">
+          <textarea
+            id="reason"
+            name="reason"
+            placeholder="Enter Your Reason for Participation"
+            required
+            oninput="countCharacters()"
+          ></textarea>
+          <p id="counter">Characters: 0</p>
+        </div>
+      </div>
+      <div class="terms">
+        <input type="checkbox" id="terms" name="terms" required onchange="enableSubmit()"/>
+        <label for="terms">
+          I have read and agree to the
+          <a href="terms.html" target="_blank">Terms and Conditions.</a>
+        </label>
+      </div>
+      <button type="button" id="submit" onclick="showMessage()" disabled>Submit</button>
+      <button type="reset" id="reset">Reset</button>
+    </form>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
